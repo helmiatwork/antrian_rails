@@ -1,0 +1,76 @@
+services:
+  web:
+      build: .
+      command: bash -c "bundle install && rails db:prepare && rails server -b 0.0.0.0"
+      volumes:
+        - .:/app
+      ports:
+        - "3000:3000"
+      depends_on:
+        - postgres
+        - redis
+        - elasticsearch
+      environment:
+        DATABASE_URL: postgres://postgres:password@postgres:5432/postgres
+        REDIS_URL: redis://redis:6379/1
+        ELASTICSEARCH_URL: http://elasticsearch:9200
+      networks:
+        - app_network
+      working_dir: /app
+  redis:
+    image: redis:6
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - app_network
+
+  elasticsearch:
+    platform: linux/arm64/v8  # Optional if you're on an ARM architecture (e.g., M1 Macs)
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+    environment:
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    networks:
+      - app_network
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.10.2
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    networks:
+      - app_network
+    depends_on:
+      - elasticsearch
+
+  postgres:
+    image: postgres:13
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    networks:
+      - app_network
+
+volumes:
+  redis-data:
+    driver: local
+  elasticsearch-data:
+    driver: local
+  postgres-data:
+    driver: local
+
+networks:
+  app_network:
