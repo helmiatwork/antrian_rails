@@ -3,8 +3,6 @@ GEM
   specs:
     aasm (5.5.0)
       concurrent-ruby (~> 1.0)
-    action_policy (0.7.5)
-      ruby-next-core (>= 1.0)
     actioncable (8.0.2)
       actionpack (= 8.0.2)
       activesupport (= 8.0.2)
@@ -193,7 +191,7 @@ GEM
       pp (>= 0.6.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
-    json (2.11.3)
+    json (2.12.0)
     json-schema (5.1.1)
       addressable (~> 2.8)
       bigdecimal (~> 3.1)
@@ -424,7 +422,6 @@ GEM
       rubocop (>= 1.72)
       rubocop-performance (>= 1.24)
       rubocop-rails (>= 2.30)
-    ruby-next-core (1.1.1)
     ruby-progressbar (1.13.0)
     ruby_parser (3.21.1)
       racc (~> 1.5)
@@ -450,7 +447,7 @@ GEM
       logger (>= 1.6.2)
       rack (>= 3.1.0)
       redis-client (>= 0.23.2)
-    sidekiq-cron (2.2.0)
+    sidekiq-cron (2.3.0)
       cronex (>= 0.13.0)
       fugit (~> 1.8, >= 1.11.1)
       globalid (>= 1.0.1)
@@ -549,7 +546,6 @@ PLATFORMS
 
 DEPENDENCIES
   aasm (~> 5.5)
-  action_policy
   better_errors (~> 2.10)
   bootsnap
   brakeman
@@ -590,7 +586,7 @@ DEPENDENCIES
   sentry-ruby (~> 5.23)
   shoulda-matchers
   sidekiq (~> 8.0)
-  sidekiq-cron (~> 2.2)
+  sidekiq-cron (~> 2.3)
   solid_cable
   solid_cache
   solid_queue
