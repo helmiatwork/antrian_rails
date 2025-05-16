@@ -55,7 +55,7 @@ gem "wicked_pdf", "~> 2.8"
 # --- Security & Protection ---
 gem "rack-attack", "~> 6.7"
 gem "rack-cors", "~> 2.0"
-gem "sentry-rails", "~> 5.23"
+gem "sentry-rails", "~> 5.24"
 gem "sentry-ruby", "~> 5.23"
 
 # --- Auditing ---
