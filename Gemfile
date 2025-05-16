@@ -56,7 +56,7 @@ gem "wicked_pdf", "~> 2.8"
 gem "rack-attack", "~> 6.7"
 gem "rack-cors", "~> 2.0"
 gem "sentry-rails", "~> 5.23"
-gem "sentry-ruby", "~> 5.23"
+gem "sentry-ruby", "~> 5.24"
 
 # --- Auditing ---
 gem "paper_trail", "~> 16.0"
