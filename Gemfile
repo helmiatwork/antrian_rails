@@ -31,7 +31,7 @@ gem "rswag-ui"
 # --- Background Jobs & Notifications ---
 gem "fcm", "~> 2.0"
 gem "mqtt", "~> 0.6.0"
-gem "noticed", "~> 2.6"
+gem "noticed", "~> 2.7"
 gem "sidekiq", "~> 8.0"
 gem "sidekiq-cron", "~> 2.2"
 
