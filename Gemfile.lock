@@ -3,8 +3,6 @@ GEM
   specs:
     aasm (5.5.0)
       concurrent-ruby (~> 1.0)
-    action_policy (0.7.5)
-      ruby-next-core (>= 1.0)
     actioncable (8.0.2)
       actionpack (= 8.0.2)
       activesupport (= 8.0.2)
@@ -302,11 +300,12 @@ GEM
       nio4r (~> 2.0)
     raabro (1.4.0)
     racc (1.8.1)
-    rack (3.1.14)
+    rack (3.1.15)
     rack-attack (6.7.0)
       rack (>= 1.0, < 4)
-    rack-cors (2.0.2)
-      rack (>= 2.0.0)
+    rack-cors (3.0.0)
+      logger
+      rack (>= 3.0.14)
     rack-protection (4.1.1)
       base64 (>= 0.1.0)
       logger (>= 1.6.0)
@@ -424,7 +423,6 @@ GEM
       rubocop (>= 1.72)
       rubocop-performance (>= 1.24)
       rubocop-rails (>= 2.30)
-    ruby-next-core (1.1.1)
     ruby-progressbar (1.13.0)
     ruby_parser (3.21.1)
       racc (~> 1.5)
@@ -549,7 +547,6 @@ PLATFORMS
 
 DEPENDENCIES
   aasm (~> 5.5)
-  action_policy
   better_errors (~> 2.10)
   bootsnap
   brakeman
@@ -576,7 +573,7 @@ DEPENDENCIES
   prawn (~> 2.5)
   puma (>= 5.0)
   rack-attack (~> 6.7)
-  rack-cors (~> 2.0)
+  rack-cors (~> 3.0)
   rails (~> 8.0.2)
   rotp (~> 6.3)
   rqrcode (~> 3.1)
