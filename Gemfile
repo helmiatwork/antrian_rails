@@ -33,7 +33,7 @@ gem "fcm", "~> 2.0"
 gem "mqtt", "~> 0.6.0"
 gem "noticed", "~> 2.6"
 gem "sidekiq", "~> 8.0"
-gem "sidekiq-cron", "~> 2.2"
+gem "sidekiq-cron", "~> 2.3"
 
 # --- Utilities ---
 gem "aasm", "~> 5.5"
